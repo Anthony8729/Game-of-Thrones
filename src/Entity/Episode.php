@@ -32,6 +32,11 @@ class Episode
      */
     private $saison;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $audience;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Episode
     public function setSaison(?Saison $saison): self
     {
         $this->saison = $saison;
+
+        return $this;
+    }
+
+    public function getAudience(): ?string
+    {
+        return $this->audience;
+    }
+
+    public function setAudience(string $audience): self
+    {
+        $this->audience = $audience;
 
         return $this;
     }
