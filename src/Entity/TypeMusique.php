@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\SaisonRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\TypeMusiqueRepository")
  */
-class Saison
+class TypeMusique
 {
     /**
      * @ORM\Id()
@@ -24,18 +24,12 @@ class Saison
     private $nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="saison")
-     */
-    private $episodes;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Musique", mappedBy="saison")
+     * @ORM\OneToMany(targetEntity="App\Entity\Musique", mappedBy="type")
      */
     private $musiques;
 
     public function __construct()
     {
-        $this->episodes = new ArrayCollection();
         $this->musiques = new ArrayCollection();
     }
 
@@ -57,37 +51,6 @@ class Saison
     }
 
     /**
-     * @return Collection|Episode[]
-     */
-    public function getEpisodes(): Collection
-    {
-        return $this->episodes;
-    }
-
-    public function addEpisode(Episode $episode): self
-    {
-        if (!$this->episodes->contains($episode)) {
-            $this->episodes[] = $episode;
-            $episode->setSaison($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEpisode(Episode $episode): self
-    {
-        if ($this->episodes->contains($episode)) {
-            $this->episodes->removeElement($episode);
-            // set the owning side to null (unless already changed)
-            if ($episode->getSaison() === $this) {
-                $episode->setSaison(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Musique[]
      */
     public function getMusiques(): Collection
@@ -99,7 +62,7 @@ class Saison
     {
         if (!$this->musiques->contains($musique)) {
             $this->musiques[] = $musique;
-            $musique->setSaison($this);
+            $musique->setType($this);
         }
 
         return $this;
@@ -110,8 +73,8 @@ class Saison
         if ($this->musiques->contains($musique)) {
             $this->musiques->removeElement($musique);
             // set the owning side to null (unless already changed)
-            if ($musique->getSaison() === $this) {
-                $musique->setSaison(null);
+            if ($musique->getType() === $this) {
+                $musique->setType(null);
             }
         }
 
