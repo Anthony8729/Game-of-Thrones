@@ -2,11 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>
+        {% block title %}Game of Thrones{% endblock %}
+        </title>
+
+        <link rel="icon" type="image/png" sizes="512x512" href="/logo.png">
+        <link rel="icon" type="image/jpg" sizes="16x16" href="/user.jpg">
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        
+        
+        
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
