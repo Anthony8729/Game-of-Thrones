@@ -5,15 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class SpinOffController extends AbstractController
+class SpinoffController extends AbstractController
 {
     /**
-     * @Route("/spin/off", name="spin_off")
+     * @Route("/spinoff", name="spinoff")
      */
     public function index()
     {
-        return $this->render('spin_off/index.html.twig', [
-            'controller_name' => 'SpinOffController',
+        return $this->render('spinoff/index.html.twig', [
+            'controller_name' => 'SpinoffController',
         ]);
     }
 }
