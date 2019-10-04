@@ -24,6 +24,11 @@ class Evenements
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $images;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $description;
 
     public function getId(): ?int
@@ -39,6 +44,18 @@ class Evenements
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getImages(): ?string
+    {
+        return $this->images;
+    }
+
+    public function setImages(string $images): self
+    {
+        $this->images = $images;
 
         return $this;
     }

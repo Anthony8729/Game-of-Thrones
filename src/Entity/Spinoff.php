@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\SpinOffRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SpinoffRepository")
  */
-class SpinOff
+class Spinoff
 {
     /**
      * @ORM\Id()
@@ -22,7 +22,7 @@ class SpinOff
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $description;
 

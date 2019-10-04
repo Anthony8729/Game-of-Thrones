@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\SpinOff;
+use App\Entity\Spinoff;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method SpinOff|null find($id, $lockMode = null, $lockVersion = null)
- * @method SpinOff|null findOneBy(array $criteria, array $orderBy = null)
- * @method SpinOff[]    findAll()
- * @method SpinOff[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Spinoff|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Spinoff|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Spinoff[]    findAll()
+ * @method Spinoff[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SpinOffRepository extends ServiceEntityRepository
+class SpinoffRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, SpinOff::class);
+        parent::__construct($registry, Spinoff::class);
     }
 
     // /**
-    //  * @return SpinOff[] Returns an array of SpinOff objects
+    //  * @return Spinoff[] Returns an array of Spinoff objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class SpinOffRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?SpinOff
+    public function findOneBySomeField($value): ?Spinoff
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')

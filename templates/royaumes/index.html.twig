@@ -6,44 +6,12 @@
 
 <h1>Royaumes</h1>
 
-<h3>Maison Arryn</h3>
+{% for royaume in royaumes %}
 
-<img src="/Royaumes/Maison Arryn.jpg" width="150" height="150">
+<h3>{{royaume.nom}}</h3>
+<img src="{{'/Royaumes/'~ royaume.images}}" width="150" height="150">
+{{ royaume.description | raw}}
 
-<h3>Maison Baratheon</h3>
-
-<img src="/Royaumes/Maison Baratheon.jpg" width="150" height="150">
-
-<h3>Maison Frey</h3>
-
-<img src="/Royaumes/Maison Frey.png" width="150" height="150">
-
-<h3>Maison Greyjoy</h3>
-
-<img src="/Royaumes/Maison Greyjoy.jpeg" width="150" height="150">
-
-<h3>Maison Lannister</h3>
-
-<img src="/Royaumes/Maison Lannister.jpg" width="150" height="150">
-
-<h3>Maison Martell</h3>
-
-<img src="/Royaumes/Maison Martell.jpg" width="150" height="150">
-
-<h3>Maison Stark</h3>
-
-<img src="/Royaumes/Maison Stark.jpg" width="150" height="150">
-
-<h3>Maison Targaryen</h3>
-
-<img src="/Royaumes/Maison Targaryen.jpg" width="150" height="150">
-
-<h3>Maison Tully</h3>
-
-<img src="/Royaumes/Maison Tully.jpeg" width="150" height="150">
-
-<h3>Maison Tyrell</h3>
-
-<img src="/Royaumes/Maison Tyrell.jpeg" width="150" height="150">
+{% endfor %}
 
 {% endblock %}

@@ -5,4 +5,13 @@
 {% block body %}
 
   <h1>Événements</h1>
+
+{% for evenement in evenements %}
+
+<h3>{{evenement.nom}}</h3>
+<img src="{{'/Evenements/'~ evenement.images}}" width="150" height="150">
+{{ evenement.description | raw}}
+
+{% endfor %}
+
 {% endblock %}

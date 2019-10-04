@@ -24,12 +24,12 @@ class Royaumes
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description;
+    private $images;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $images;
+    private $description;
 
     public function getId(): ?int
     {
@@ -48,18 +48,6 @@ class Royaumes
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getImages(): ?string
     {
         return $this->images;
@@ -68,6 +56,18 @@ class Royaumes
     public function setImages(string $images): self
     {
         $this->images = $images;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
