@@ -1,8 +1,27 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Formulaire{% endblock %}
 
 {% block body %}
 
 <h1>Formulaire</h1>
+
+<form>
+
+    <div class="form-group">
+      <label for="exampleInputLogin">Login</label>
+      <input type="login" class="form-control" id="exampleInputLogin" aria-describedby="loginHelp" placeholder="Enter login">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Mot de passe</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1"> Repetez le mot de passe</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-success">S'inscrire</button>
+
 {% endblock %}
