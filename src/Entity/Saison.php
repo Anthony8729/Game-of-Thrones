@@ -33,6 +33,11 @@ class Saison
      */
     private $musiques;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
     public function __construct()
     {
         $this->episodes = new ArrayCollection();
@@ -117,4 +122,21 @@ class Saison
 
         return $this;
     }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return gettype($this->getEpisodes()) ;
+    }
+
 }

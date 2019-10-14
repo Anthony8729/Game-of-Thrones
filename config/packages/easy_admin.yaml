@@ -3,6 +3,7 @@ easy_admin:
         - App\Entity\Personnages
         - App\Entity\Royaumes
         - App\Entity\Saison
+        - App\Entity\Episode
         - App\Entity\Musique
         - App\Entity\Produit
         - App\Entity\Evenements

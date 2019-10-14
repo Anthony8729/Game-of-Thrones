@@ -39,9 +39,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/saison" role="button" aria-haspopup="true" aria-expanded="false">Saisons</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">saison 1</a>
-                        <a class="dropdown-item" href="#">Saison 2</a>
-                        <a class="dropdown-item" href="#">Saison 3</a>
+                        <a class="dropdown-item" href="/saison/1">Saison 1</a>
+                        <a class="dropdown-item" href="/saison/2">Saison 2</a>
+                        <a class="dropdown-item" href="/saison/3">Saison 3</a>
+                        <a class="dropdown-item" href="/saison/4">Saison 4</a>
+                        <a class="dropdown-item" href="/saison/5">Saison 5</a>
+                        <a class="dropdown-item" href="/saison/6">Saison 6</a>
+                        <a class="dropdown-item" href="/saison/7">Saison 7</a>
+                        <a class="dropdown-item" href="/saison/8">Saison 8</a>
                     </div>
                 </li>            
                 <li class="nav-item">
@@ -50,9 +55,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/produit" role="button" aria-haspopup="true" aria-expanded="false">Produits</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Dvd</a>
-                        <a class="dropdown-item" href="#">Livres</a>
-                        <a class="dropdown-item" href="#">Jeux</a>
+                        <a class="dropdown-item" href="/produit/dvd">Dvd</a>
+                        <a class="dropdown-item" href="/produit/livres">Livres</a>
+                        <a class="dropdown-item" href="/produit/jeux">Jeux</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -66,12 +71,16 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav>             
     <div class="container">
         {% block body %}
         
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        {% endblock %}
     </body>
 
         {% block footer %}

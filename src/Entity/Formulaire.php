@@ -24,7 +24,7 @@ class Formulaire
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Email( message="Cet email n'est pas valide")
+     * @Assert\Email(message="l'email'{{ value }}' n'est pas un email valide", checkMX = true)
      */
     private $email;
 
