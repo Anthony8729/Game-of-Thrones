@@ -8,9 +8,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Formulaire;
 
 class FormulaireController extends AbstractController
 {
@@ -20,15 +20,22 @@ class FormulaireController extends AbstractController
     public function index(Request $request, ObjectManager $manager)
     {
 
-        $form = $this->createFormBuilder()
+        $formulaire = new Formulaire();
+
+        $form = $this->createFormBuilder($formulaire)
             ->add('login', TextType::class)
             ->add('email', EmailType::class)
             ->add('motdepasse', PasswordType::class)
             ->add('repetezlemotdepasse',PasswordType::class)
             ->getForm();
-            $manager->flush();
+            
 
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+             return $this->redirectToRoute('home'); 
+        }
 
         return $this->render('formulaire/index.html.twig', [
             'controller_name' => 'FormulaireController',

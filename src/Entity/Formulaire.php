@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FormulaireRepository")
@@ -19,17 +20,25 @@ class Formulaire
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Login;
+    private $login;
 
     /**
      * @ORM\Column(type="string", length=255)
-     */
-    private $Motdepasse;
-
-    /**
-     * @ORM\Column(type="string", length=255)
+     * @Assert\Email( message="Cet email n'est pas valide")
      */
     private $email;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=8, max=255, minMessage="Votre mot de passe est trop court")
+     */
+    private $motdepasse;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=8, max=255, minMessage="Votre mot de passe doit être identique")
+     */
+    private $repetezlemotdepasse;
 
     public function getId(): ?int
     {
@@ -38,24 +47,12 @@ class Formulaire
 
     public function getLogin(): ?string
     {
-        return $this->Login;
+        return $this->login;
     }
 
-    public function setLogin(string $Login): self
+    public function setLogin(string $login): self
     {
-        $this->Login = $Login;
-
-        return $this;
-    }
-
-    public function getMotdepasse(): ?string
-    {
-        return $this->Motdepasse;
-    }
-
-    public function setMotdepasse(string $Motdepasse): self
-    {
-        $this->Motdepasse = $Motdepasse;
+        $this->login = $login;
 
         return $this;
     }
@@ -68,6 +65,30 @@ class Formulaire
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getMotdepasse(): ?string
+    {
+        return $this->motdepasse;
+    }
+
+    public function setMotdepasse(string $motdepasse): self
+    {
+        $this->motdepasse = $motdepasse;
+
+        return $this;
+    }
+
+    public function getRepetezlemotdepasse(): ?string
+    {
+        return $this->repetezlemotdepasse;
+    }
+
+    public function setRepetezlemotdepasse(string $repetezlemotdepasse): self
+    {
+        $this->repetezlemotdepasse = $repetezlemotdepasse;
 
         return $this;
     }
