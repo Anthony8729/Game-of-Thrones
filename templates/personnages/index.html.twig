@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnages{% endblock %}
+
+{% block body %}
+
+<h1>Personnages</h1>
+
+{% for personnage in personnages %}
+
+<h3>{{personnage.nom}}</h3>
+<img src="{{'/Personnages/'~ personnage.images}}" width="150" height="150">
+{{ personnage.description | raw}}
+
+{% endfor %}
+
+{% endblock %}

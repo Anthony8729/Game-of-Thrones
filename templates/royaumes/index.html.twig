@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Royaumes{% endblock %}
+
+{% block body %}
+
+<h1>Royaumes</h1>
+
+{% for royaume in royaumes %}
+
+<h3>{{royaume.nom}}</h3>
+<img src="{{'/Royaumes/'~ royaume.images}}" width="150" height="150">
+{{ royaume.description | raw}}
+
+{% endfor %}
+
+{% endblock %}

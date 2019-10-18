@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+        {% block title %}Game of Thrones{% endblock %}
+        </title>
+    
+        <img src="/logo.png" width="100" height="100">
+        <a href="{{ path('login') }}">Connexion<a>
+
+        <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        <style>
+            body {
+                background-image:url(/gameofthrones.jpg);
+            }
+         </style>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Accueil</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/personnages">Personnages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/royaumes">Royaumes</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/saison" role="button" aria-haspopup="true" aria-expanded="false">Saisons</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/saison/1">Saison 1</a>
+                        <a class="dropdown-item" href="/saison/2">Saison 2</a>
+                        <a class="dropdown-item" href="/saison/3">Saison 3</a>
+                        <a class="dropdown-item" href="/saison/4">Saison 4</a>
+                        <a class="dropdown-item" href="/saison/5">Saison 5</a>
+                        <a class="dropdown-item" href="/saison/6">Saison 6</a>
+                        <a class="dropdown-item" href="/saison/7">Saison 7</a>
+                        <a class="dropdown-item" href="/saison/8">Saison 8</a>
+                    </div>
+                </li>            
+                <li class="nav-item">
+                    <a class="nav-link" href="/musique">Musiques</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/produit" role="button" aria-haspopup="true" aria-expanded="false">Produits</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/produit/dvd">Dvd</a>
+                        <a class="dropdown-item" href="/produit/livres">Livres</a>
+                        <a class="dropdown-item" href="/produit/jeux">Jeux</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/evenements">Evenements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/spinoff">Spinoff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/formulaire">Formulaire</a>
+                </li>
+            </ul>
+        </div>
+    </nav>             
+    <div class="container">
+        {% block body %}
+        
+        {% endblock %}
+        {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        {% endblock %}
+    </body>
+
+        {% block footer %}
+
+        <a href="{{ path('cgu') }}">CGU</a>
+        <a href="{{ path('mentionslegales') }}">Mentions légales</h4>
+
+        <img src="/facebook.png" width="50" height="50">
+        <img src="/twitter.png" width="50" height="50">
+
+        {% endblock %}
+</html>

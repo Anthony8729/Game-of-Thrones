@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Spinoff{% endblock %}
+
+{% block body %}
+
+<h1>Spinoff</h1>
+
+{% for spinoff in spinoff %}
+
+<h3>{{spinoff.nom}}</h3>
+{{ spinoff.description | raw}}
+
+{% endfor %}
+
+{% endblock %}
